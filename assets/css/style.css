@@ -395,3 +395,306 @@ label {
 }
 
 
+
+
+/* ======================== Notebook redesign ======================== */
+:root {
+  --paper: #f6f0df;
+  --paper-deep: #eee5cf;
+  --ink: #23211f;
+  --muted-ink: #5e5a52;
+  --rule: rgba(68, 114, 165, 0.18);
+  --margin-line: rgba(184, 73, 73, 0.42);
+  --pencil: #7b7468;
+  --paper-shadow: 0 14px 35px rgba(58, 45, 25, 0.10);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, transparent 0, transparent 72px, var(--margin-line) 72px, var(--margin-line) 74px, transparent 74px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--rule) 31px, var(--rule) 32px);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.17;
+  background-image: radial-gradient(circle at 20% 30%, rgba(40,35,25,.28) 0.5px, transparent 0.7px);
+  background-size: 10px 10px;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.header {
+  background: rgba(246, 240, 223, 0.96);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: none !important;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+}
+
+li.logo a,
+.menu li a,
+.open-menu,
+.close-menu {
+  color: var(--ink);
+}
+
+.menu li a {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  font-weight: 700;
+  transform: rotate(-1deg);
+}
+
+.menu li a::after {
+  background-color: var(--ink);
+  height: 1px;
+}
+
+#Home {
+  background: transparent;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+}
+
+#Home .container {
+  position: relative;
+}
+
+#Home .container::before,
+#Home .container::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 20px;
+  background: rgba(220, 205, 164, 0.48);
+  top: -8px;
+  filter: saturate(.7);
+}
+
+#Home .container::before { left: 8%; transform: rotate(-4deg); }
+#Home .container::after { right: 12%; transform: rotate(4deg); }
+
+.intro {
+  border: 2px solid var(--ink);
+  border-radius: 2px 6px 3px 8px;
+  padding: 34px 36px 30px;
+  color: var(--ink);
+  background: rgba(255,255,255,0.36);
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-0.5deg);
+  position: relative;
+}
+
+.intro::after {
+  content: "★";
+  position: absolute;
+  right: 24px;
+  top: 14px;
+  font-family: "Caveat", cursive;
+  font-size: 32px;
+  transform: rotate(12deg);
+}
+
+.intro h1 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(70px, 10vw, 126px);
+  line-height: .82;
+  color: var(--ink);
+  text-shadow: none;
+  letter-spacing: -2px;
+}
+
+.intro h4 {
+  color: var(--ink);
+  text-shadow: none;
+  font-size: 15px;
+  letter-spacing: 2.6px;
+  margin-top: 18px;
+}
+
+.intro p {
+  color: var(--muted-ink);
+  width: min(720px, 100%);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.notebook-kicker,
+.hero-scribble {
+  font-family: "Caveat", cursive;
+  color: var(--pencil);
+}
+
+.notebook-kicker {
+  font-size: 24px;
+  margin-bottom: 12px;
+  transform: rotate(-1deg);
+}
+
+.hero-scribble {
+  font-size: 28px;
+  margin-top: 18px;
+  display: inline-block;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-1.5deg);
+}
+
+section:not(#Home) .containerr,
+section:not(#Home) .container {
+  position: relative;
+}
+
+.lession_content,
+.accordion,
+.about_bio,
+.lession_bio,
+.form-container,
+.contact-card {
+  background: rgba(255,255,255,0.50);
+  border: 1.5px solid rgba(35,33,31,.88);
+  box-shadow: var(--paper-shadow);
+}
+
+.lession_content {
+  padding: 12px;
+  transform: rotate(-0.4deg);
+}
+
+.lession_content:nth-child(even) { transform: rotate(0.4deg); }
+
+.lession_content img,
+.lession_bio_img img,
+.about_img img,
+.faq_images img {
+  border: 1.5px solid var(--ink);
+  filter: saturate(.78) contrast(.96);
+  box-shadow: 5px 6px 0 rgba(35,33,31,.10);
+}
+
+.inner_title h5 {
+  font-family: "Caveat", cursive;
+  text-transform: none;
+  font-size: 34px !important;
+  color: var(--ink);
+  line-height: 1;
+}
+
+p,
+.accordion-body,
+.form-control,
+label,
+.contact-card {
+  color: var(--muted-ink);
+}
+
+.common_button button,
+.submit-button {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 3px 8px 4px 6px;
+  padding: 8px 24px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.common_button button:hover,
+.submit-button:hover {
+  background: transparent;
+  color: var(--ink);
+  transform: translate(2px,2px) rotate(-1deg);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.accordion-item,
+.accordion-button,
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  color: var(--ink);
+  border-color: rgba(35,33,31,.4);
+}
+
+.accordion-button {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+}
+
+.form-container,
+.contact-card,
+.about_bio,
+.lession_bio {
+  padding: 24px;
+  border-radius: 2px 7px 3px 6px;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1.5px solid rgba(35,33,31,.48);
+  border-radius: 0;
+}
+
+footer.bg-dark {
+  background: transparent !important;
+  border-top: 2px solid var(--ink);
+}
+
+footer p.text-white {
+  color: var(--ink) !important;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+
+#scroll-top-btn {
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+@media (max-width: 610px) {
+  body {
+    background-image:
+      linear-gradient(to right, transparent 0, transparent 34px, var(--margin-line) 34px, var(--margin-line) 36px, transparent 36px),
+      repeating-linear-gradient(to bottom, transparent 0, transparent 29px, var(--rule) 29px, var(--rule) 30px);
+  }
+
+  .menu {
+    background: var(--paper);
+    border-left: 2px solid var(--ink);
+  }
+
+  .intro {
+    margin-left: 0;
+    padding: 26px 22px;
+  }
+
+  .intro h1 { font-size: 64px; }
+  .intro h4 { font-size: 12px; }
+  .intro p { font-size: 16px; }
+
+  .form-row { flex-direction: column; }
+  .form-row > div { margin-right: 0; }
+
+  .lession_content,
+  .about_bio,
+  .lession_bio,
+  .form-container,
+  .contact-card {
+    transform: none;
+  }
+}
