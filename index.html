@@ -1,428 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!--google fonts -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KokoChess — Chess, study notes & Anki</title>
+  <meta name="description" content="KokoChess — chess coaching, study notes and Anki flashcards presented like a working notebook.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- font awesome css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- bootstrap css -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- animated css -->
-  <link rel="stylesheet" href="assets/css/animate.css">
-  <!-- main css -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
+  <div class="paper-noise" aria-hidden="true"></div>
 
-<!--============================================ top navbar section =============================================-->
-      <header class="header shadow-sm py-2 mb-1">
-        <div class="containerr">
-          <!-- navbar -->
-          <header class="p-2">
-            <nav>
-              <ul class='nav-bar'>
-                <!-- logo path -->
-                <li class='logo'><a href='#'><img class="img-fluid" src='assets/images/logo.png' />Logo</a></li>
-                <input type='checkbox' id='check' />
-                <span class="menu">
-                  <li><a href="#Home">Home</a></li>
-                  <li><a href="#Lessons">Lessons</a></li>
-                  <li><a href="#Anki">Anki</a></li>
-                  <li><a href="#About">About</a></li>
-                  <li><a href="#Contact">Contact</a></li>
-                  <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
-                </span>
-                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-              </ul>
-            </nav>
-          </header>
+  <header class="topbar">
+    <a class="brand" href="#home">KokoChess <span>♞</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#lessons">lessons</a>
+      <a href="#anki">anki</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cover" id="home">
+      <div class="cover-margin">
+        <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+      </div>
+
+      <div class="cover-copy">
+        <p class="eyebrow">CHESS NOTEBOOK / LONDON → WORLDWIDE</p>
+        <h1>Koko<br>Chess</h1>
+        <p class="cover-line">learn it <b>→</b> test it <b>→</b> review it <b>→</b> remember it</p>
+        <p class="cover-intro">A working notebook for chess study, coaching and spaced-repetition flashcards.</p>
+        <div class="cover-actions">
+          <a class="ink-button" href="#lessons">open notebook</a>
+          <a class="text-link" href="https://payhip.com/marksteadman" target="_blank" rel="noopener">browse Anki decks ↗</a>
         </div>
-      </header>
+      </div>
 
+      <div class="cover-sketch" aria-hidden="true">
+        <div class="big-knight">♞</div>
+        <p>position first.<br>answer second.</p>
+        <div class="curved-arrow">↙</div>
+      </div>
 
+      <div class="tape tape-a"></div>
+      <div class="tape tape-b"></div>
+    </section>
 
-<!--============================================ intro or headline section ============================================-->
-      <section class="my-5 py-5" id="Home">
-        <div class="container wow fadeInUp">
-          <div class="row">
-            <div class="col-md-8 offset-md-4">
-              <div class="intro">
-                <div class="notebook-kicker">study notes • chess • spaced repetition</div><h1>kokochess</h1>
-                <h4>LEARN IT. WRITE IT DOWN. REMEMBER IT.</h4>
-                <p class="pt-3">KokoChess is a working notebook for better learning: chess coaching, study ideas and Anki flashcards designed to make difficult things stick.</p><div class="hero-scribble">♞ think → test → review → improve</div><div class="margin-note">note to self:<br>patterns beat memorising</div><div class="chess-doodle" aria-hidden="true">♜ ♞ ♝ ♛ ♚ ♟</div>
-               </div>
-              
-            </div>
+    <section class="spread" id="lessons">
+      <aside class="side-tab">LESSONS</aside>
+
+      <div class="spread-left page">
+        <span class="page-number">p. 02</span>
+        <p class="handnote top-note">three ways to work on your game ↓</p>
+
+        <article class="photo-note rotate-left">
+          <div class="tape small"></div>
+          <img src="assets/images/Lession-1.webp" alt="Online chess lesson">
+          <div>
+            <h2>Online lessons</h2>
+            <p>One-to-one chess coaching, seven days a week, for complete beginners through to ambitious competitive players.</p>
           </div>
-        </div>
-      </section>
+        </article>
 
-
-<section class="study-spread">
-  <div class="containerr">
-    <div class="study-grid">
-      <div class="study-page chess-study-card">
-        <div class="paper-label">position study</div>
-        <div class="mini-board" aria-label="Decorative chessboard">
-          <span>♜</span><span></span><span>♝</span><span>♛</span><span>♚</span><span>♝</span><span>♞</span><span>♜</span>
-          <span>♟</span><span>♟</span><span>♟</span><span></span><span></span><span>♟</span><span>♟</span><span>♟</span>
-          <span></span><span></span><span>♞</span><span></span><span>♟</span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span>♟</span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span>♗</span><span>♙</span><span>♙</span><span></span><span></span><span></span>
-          <span></span><span></span><span>♘</span><span></span><span></span><span>♘</span><span></span><span></span>
-          <span>♙</span><span>♙</span><span>♙</span><span></span><span></span><span>♙</span><span>♙</span><span>♙</span>
-          <span>♖</span><span></span><span>♗</span><span>♕</span><span>♔</span><span></span><span></span><span>♖</span>
-        </div>
-        <div class="board-note">candidate moves?<br><strong>1. Bxf7+</strong> → calculate first</div>
-        <div class="arrow-note">↘ don't guess</div>
-      </div>
-
-      <div class="study-page notes-page">
-        <div class="paper-label">how to study</div>
-        <h2>Build a position.<br>Test the idea.<br>Review the mistake.</h2>
-        <p>Good chess study should feel like a notebook full of questions, not a textbook full of answers.</p>
-        <div class="hand-list">
-          <span>✓ spot the pattern</span>
-          <span>✓ explain it simply</span>
-          <span>✓ turn it into a card</span>
-          <span>✓ revisit it later</span>
-        </div>
-        <div class="sticky-note">small improvements<br>compound.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--============================================ Lession section ============================================-->
-<section id="Lession">
- <div class="lession py-5">
-  <div class="containerr">
-    <div class="row "><div class="section-scribble">lesson notes ↓</div>
-
-      <div class="col-md-4 wow fadeInUp">
-        <div class="lession_content text-md-start text-center mb-md-0 mb-5">
-          <img class="img-fluid mb-3" src="assets/images/Lession-1.webp" alt="Lession-img">
-          <div class="lession_info my-1">
-            <div class="inner_title">
-              <h5>OnLINE <br> LESSONS</h5>
-            </div>
-              <div class="text_read">
-                <p class="text my-2">
-                  We teach online sessions 7 days a week. We train children and adults ranging from those who have never played to individuals competing internationally. We have a wealth of digital chess tools which make online coaching hugely successful and productive.
-                  <span class="more-text"></span>
-                </p>
-                <a href="#" class="read-more">Read More</a>
-                <a href="#" class="read-less">Read Less</a>
-              </div>
-            </div>
+        <article class="photo-note rotate-right">
+          <div class="tape small"></div>
+          <img src="assets/images/Lession-2.webp" alt="Adult chess coaching">
+          <div>
+            <h2>Adult coaching</h2>
+            <p>Game analysis, pattern recognition and practical decision-making without drowning you in theory.</p>
           </div>
-        </div>
+        </article>
 
-
-      <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="lession_content text-md-start text-center mb-md-0 mb-5">
-          <img class="img-fluid mb-3" src="assets/images/Lession-2.webp" alt="Lession-img">
-          <div class="lession_info my-1">
-            <div class="inner_title">
-              <h5>CHess coaching <br> For Adults</h5>
-            </div>
-              <div class="text_read">
-                <p class="text my-2">
-                  Our highly experienced coaches fast track your progress and improvement. For individuals new to the game we provide the key building blocks to create a solid foundation to your chess. For players looking to improve, we analyse your existing games and help you recognise new opportunities to capitalise on. 
-                  <span class="more-text"></span>
-                </p>
-                <a href="#" class="read-more">Read More</a>
-                <a href="#" class="read-less">Read Less</a>
-              </div>
-            </div>
+        <article class="photo-note rotate-left-small">
+          <div class="tape small"></div>
+          <img src="assets/images/Lession-3.webp" alt="Children learning chess">
+          <div>
+            <h2>Children's lessons</h2>
+            <p>Interactive sessions that build chess skill alongside concentration, creativity and confidence.</p>
           </div>
-        </div>
+        </article>
+      </div>
 
+      <div class="spread-right page position-page">
+        <span class="page-number">p. 03</span>
+        <p class="handnote">example study page</p>
 
-      <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="lession_content text-md-start text-center mb-md-0 mb-5">
-            <img class="img-fluid mb-3" src="assets/images/Lession-3.webp" alt="Lession-img">
-          <div class="lession_info my-1">
-            <div class="inner_title">
-              <h5>CHESS Lessons <br> For CHILDREN</h5>
-            </div>
-              <div class="text_read">
-                <p class="text my-2">
-                  We have tutors that excel at introducing the game in fun and interactive ways to capture children's imagination. Along with developing children's chess ability, our lessons improve critical thinking, focus and creativity.
-                  <span class="more-text"></span>
-                </p>
-                <a href="#" class="read-more">Read More</a>
-                <a href="#" class="read-less">Read Less</a>
-              </div>
-            </div>
+        <div class="board-wrap">
+          <div class="board" aria-label="Decorative chessboard">
+            <span>♜</span><span></span><span>♝</span><span>♛</span><span>♚</span><span>♝</span><span>♞</span><span>♜</span>
+            <span>♟</span><span>♟</span><span>♟</span><span></span><span></span><span>♟</span><span>♟</span><span>♟</span>
+            <span></span><span></span><span>♞</span><span></span><span>♟</span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span>♟</span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span>♗</span><span>♙</span><span>♙</span><span></span><span></span><span></span>
+            <span></span><span></span><span>♘</span><span></span><span></span><span>♘</span><span></span><span></span>
+            <span>♙</span><span>♙</span><span>♙</span><span></span><span></span><span>♙</span><span>♙</span><span>♙</span>
+            <span>♖</span><span></span><span>♗</span><span>♕</span><span>♔</span><span></span><span></span><span>♖</span>
           </div>
+          <div class="board-arrow">↘</div>
+          <p class="board-caption">candidate moves?<br><strong>calculate before moving</strong></p>
         </div>
 
-        
-      </div>
-    </div>
-  </div>
- </div>
-</section>
-
-
-
-<!--============================================ chease Lession with zoom section ============================================-->
-<section class="my-0 my-md-5">
-  <div class="containerr">
-    <div class="row g-md-5 g-0 align-items-center flex-md-row flex-column-reverse">
-      <div class="col-md-6 wow fadeInLeft">
-        <div class="lession_bio text-start text-md-end">
-            <div class="inner_title">
-              <h5 class="mt-3 mt-md-0 fs-3 ">CHESS LESSONS WITH ZOOM </h5>
-            </div>
-            <p class="my-2 my-md-2 lh-lg">All of our team are exceptional chess players & highly skilled teachers.
-              Many of the Mindful Chess team have ELO ratings over 2000.
-              All of our team are exceptional at chess & the art of teaching.
-              You can book a taster with us</p>
-             <div class="common_button mt-3">
-              <a href="#Contact"><button>Contact</button></a>
-             </div>
-         
-        </div>
-      </div>
-      <div class="col-md-6 wow fadeInRight">
-        <div class="lession_bio_img">
-            <img class="img-fluid" src="assets/images/Chess-Online-Learning.webp" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--============================================ Anki decks section ============================================-->
-<section class="py-5 notebook-section section-tab-anki" id="Anki">
-  <div class="containerr">
-    <div class="row g-md-5 align-items-center flex-md-row flex-column-reverse"><div class="section-scribble">flashcards = memory with timing</div>
-      <div class="col-md-6">
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <!-- FAQ title -->
-              <strong>What is Anki?</strong>
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <!-- FAQ description -->
-                 <p>Anki is a spaced repetition piece of software, it helps you remember what you’ve learned, forever. Anki is a flashcard-based program that uses spaced repetition to reinforce learning. It really works.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <!-- FAQ title -->
-                <strong>Why is Anki useful?</strong>
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                 <!-- FAQ description -->
-                 <p>The point of Anki is that makes your learning more efficient. Easy flashcards are reviewed less often than harder ones and therefore Anki makes you focus on your mistakes and the more difficult aspects of your study.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <!-- FAQ title -->
-               <strong>Why is Anki better than paper flashcards?</strong>
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                 <!-- FAQ description -->
-                  <p>The Anki algorithm automatically makes you review your cards when you need to to avoid forgetting them. The other benefit of digital flaschards is that they are easier to make, either by yourself, or buy downloading from sites such as this.</p>
-              </div>
-            </div>
-          </div>
+        <div class="checklist">
+          <label><span>✓</span> checks</label>
+          <label><span>✓</span> captures</label>
+          <label><span>✓</span> threats</label>
+          <label><span>✓</span> opponent's idea</label>
         </div>
 
-
+        <a class="ink-button small-button" href="#contact">book a lesson</a>
       </div>
-      <div class="col-md-6 mb-5 mb-md-0 text-center text-md-start">
-        <div class="faq_images">
-          <img class="img-fluid " src="assets/images/faq.png" alt="">
-          <div class="common_button mt-4">
-            <!-- Anki link path -->
-            <a target="_blank" href="https://payhip.com/marksteadman"><button>Anki</button></a>
-           </div>
+    </section>
+
+    <section class="anki-sheet" id="anki">
+      <aside class="side-tab right">ANKI</aside>
+
+      <div class="anki-intro">
+        <p class="eyebrow">MEMORY SYSTEM / PAGE 04</p>
+        <h2>Flashcards that behave like a good notebook.</h2>
+        <p>Anki brings difficult material back just before you forget it. The result is less rereading and more remembering.</p>
+        <a class="ink-button" href="https://payhip.com/marksteadman" target="_blank" rel="noopener">open the deck shelf ↗</a>
+      </div>
+
+      <div class="cards-stack" aria-label="Sample flashcards">
+        <article class="index-card card-one">
+          <span class="card-tag">Q</span>
+          <h3>Why use spaced repetition?</h3>
+          <p>Because review timing matters more than review volume.</p>
+          <span class="scribble">easy card → later</span>
+        </article>
+
+        <article class="index-card card-two">
+          <span class="card-tag">Q</span>
+          <h3>What should a good card do?</h3>
+          <p>Force one clear retrieval, then give one clear answer.</p>
+          <span class="scribble">one idea per card!</span>
+        </article>
+
+        <article class="sticky">
+          remember:<br>
+          <strong>testing beats rereading</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-spread" id="about">
+      <aside class="side-tab">ABOUT</aside>
+
+      <div class="about-photo">
+        <div class="polaroid">
+          <img src="assets/images/Chess-Online-Learning.webp" alt="Online chess learning">
+          <span>working notes, not glossy theory</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
+      <div class="about-copy page">
+        <p class="eyebrow">PAGE 05 / ABOUT</p>
+        <h2>A site for people who actually want to remember what they study.</h2>
+        <p>KokoChess combines chess coaching with the logic of a notebook: isolate the idea, write it down, test yourself, come back later.</p>
+        <p>The aim is practical improvement rather than passive consumption—whether you are learning your first opening ideas, reviewing your own games or using Anki to build long-term memory.</p>
 
-<!--============================================ About/bio section ============================================-->
-<section class="my-5 py-0 py-md-5 notebook-section section-tab-about" id="About">
-  <div class="containerr">
-    <div class="row g-md-5 g-0 align-items-center"><div class="section-scribble">who is behind the notes?</div>
-      <div class="col-md-6 wow fadeInUp">
-        <div class="about_img text-start text-md-end">
-          <img class="img-fluid" src="assets/images/about.gif" alt="">
+        <div class="margin-list">
+          <span>→ simple explanations</span>
+          <span>→ active recall</span>
+          <span>→ game analysis</span>
+          <span>→ repeat what matters</span>
         </div>
+
+        <a class="text-link" href="https://www.youtube.com/@X2Y23" target="_blank" rel="noopener">YouTube notes ↗</a>
       </div>
-      <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="about_bio">
-          <div class="inner_title">
-            <h5 class="mt-3 mt-md-0 fs-3 ">Bio/About Us</h5>
-          </div>
-          <p class="my-2 my-md-2 lh-lg">Mindful Chess was founded in 2015 with the goal to improve access to chess teaching for students across London. We started off teaching a single group of 12 students once a week. Through schools and parents sharing information about our unique approach, our  program has grown to now teach over 500 students a week in schools all across the UK.
-            As well as our group lessons, we've recognised how productive 1:1 sessions are for adults and children. We now teach individuals ranging from the age of 4 to 104 across 3 different continents. teach children ages from 5+ and adults keen to learn or looking to get a new perspective on their game.
-          </p>
-           <div class="common_button mt-3">
-            <!-- Youtube link path -->
-            <a href="https://www.youtube.com/@X2Y23"><button>Youtube</button></a>
-           </div>
+    </section>
+
+    <section class="contact-sheet" id="contact">
+      <div class="tear-line" aria-hidden="true"></div>
+
+      <div class="contact-heading">
+        <p class="eyebrow">PAGE 06 / LEAVE A NOTE</p>
+        <h2>Want to work on your chess?</h2>
+        <p>Write a message below. It arrives like a note slipped into the back of the book.</p>
+      </div>
+
+      <form class="note-form" action="https://formspree.io/f/xqazpjnv" method="post">
+        <div class="field-row">
+          <label>Name<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
         </div>
+        <label>Subject<input type="text" name="subject"></label>
+        <label>Your note<textarea name="message" rows="6" required></textarea></label>
+        <button class="ink-button" type="submit">send note →</button>
+      </form>
+
+      <div class="contact-scribble">
+        <span>kokoweb08@gmail.com</span>
+        <span>07459 813497</span>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<section class="pb-4 notebook-section section-tab-contact" id="Contact">
-  <div class="containerr">
-    <div class="inner_title my-3"><div class="section-scribble">leave a note →</div>
-      <h5 class="mt-3 mt-md-0 fs-3 ">Contact</h5>
-    </div>
-    <div class="row">
-      <div class="col-md-6 wow fadeInLeft">
-        <div class="form-container">
-          <form action="https://formspree.io/f/xqazpjnv" method="post">
-              <div class="form-row d-flex mb-2">
-                <div class="form-floating mb-3">
-                  <input type="text" name="First Name" class="form-control" id="firstName" placeholder="First Name">
-                  <label for="firstName">First Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" name="Last Name" class="form-control" id="lastName" placeholder="Last Name">
-                  <label for="lastName">Last Name</label>
-                </div>
-              </div>
-              <div class="form-row d-flex mb-2">
-                <div class="form-floating mb-3">
-                  <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
-                  <label for="email">Your Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject">
-                  <label for="subject">Subject</label>
-                </div>
-              </div>
-              <div class="form-floating">
-                <textarea class="form-control" name="message" placeholder="Leave a comment here" style="height: 100px"></textarea>
-                <label for="comments">Comments</label>
-
-              </div>
-             <div class="submit-butn my-4">
-              <button type="submit" class="submit-button">Submit</button>
-             </div>
-          </form>
-        </div>
-      </div>
-      <div class="col-md-6 wow fadeInRight">
-        <div class="contact_info">
-          <div class="contact-card">
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Address:</strong><br>
-                198 West 21th Street, Suite 721 New York NY 10016
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Phone:</strong><br>
-                07459813497
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email:</strong><br>
-                kokoweb08@gmail.com
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-globe"></i>
-              <div>
-                <strong>Website:</strong><br>
-                yoursite.com
-              </div>
-            </div>
-
-             <div class="social_icon d-flex justify-content-between align-items-center">
-              <div class="tite">
-                <strong>Follow : </strong>
-              </div>
-              <div class="icons">
-                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-              </div>
-             </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- footer -->
-<section>
-  <footer class="bg-dark py-4"><div class="footer-doodle">♟︎ ½–½ ? 1–0 ! 0–1 ??</div>
-     <p class="text-center text-white fs-">Copyright © 2024 Your site's name - All Rights Reserved</p>
+  <footer>
+    <span>KokoChess</span>
+    <span>♔ ♕ ♖ ♗ ♘ ♙</span>
+    <span>study • test • remember</span>
   </footer>
-</section>
-
-
-
-
-
-  <!-- Scroll Top Button -->
-  <button id="scroll-top-btn" title="Go to top">↑</button>
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <!-- wow js -->
-   <script src="assets/js/wow.min.js"></script>
-  <!-- main js -->
-  <script src="assets/js/custom.js"></script>
-
-  <!-- animation run js -->
-  <script>
-    new WOW().init();
-  </script>
-
-
 </body>
-
 </html>
