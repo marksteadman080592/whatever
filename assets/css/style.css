@@ -698,3 +698,233 @@ footer p.text-white {
     transform: none;
   }
 }
+
+
+/* ======================== Notebook details: v2 ======================== */
+.notebook-section {
+  position: relative;
+  overflow: visible;
+}
+
+.notebook-section::before {
+  position: absolute;
+  top: 18px;
+  right: 3%;
+  font-family: "Caveat", cursive;
+  font-size: 18px;
+  letter-spacing: .5px;
+  color: rgba(35,33,31,.68);
+  padding: 5px 12px;
+  border: 1.5px solid rgba(35,33,31,.72);
+  background: rgba(247,239,199,.88);
+  box-shadow: 2px 3px 0 rgba(35,33,31,.15);
+  transform: rotate(2deg);
+  z-index: 3;
+}
+
+.section-tab-lessons::before { content: "page 01 / lessons"; }
+.section-tab-anki::before { content: "page 02 / memory"; transform: rotate(-2deg); }
+.section-tab-about::before { content: "page 03 / about"; }
+.section-tab-contact::before { content: "page 04 / contact"; transform: rotate(-1deg); }
+
+.section-scribble {
+  width: fit-content;
+  font-family: "Caveat", cursive;
+  color: rgba(35,33,31,.66);
+  font-size: 26px;
+  margin: 0 0 14px 4px;
+  transform: rotate(-1.6deg);
+  position: relative;
+}
+
+.section-scribble::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: -12px;
+  bottom: -2px;
+  height: 7px;
+  border-bottom: 2px solid rgba(35,33,31,.45);
+  border-radius: 50%;
+  transform: rotate(-1deg);
+}
+
+.margin-note {
+  position: absolute;
+  right: -120px;
+  bottom: 22px;
+  width: 170px;
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  line-height: 1.05;
+  color: rgba(35,33,31,.62);
+  transform: rotate(4deg);
+  text-align: center;
+}
+
+.margin-note::before {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 30px;
+  left: -55px;
+  top: -8px;
+  border-top: 2px solid rgba(35,33,31,.45);
+  border-left: 2px solid transparent;
+  transform: rotate(-18deg);
+}
+
+.chess-doodle {
+  margin-top: 22px;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  letter-spacing: 10px;
+  color: rgba(35,33,31,.72);
+  transform: rotate(-1deg);
+  text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+}
+
+.lession_content {
+  position: relative;
+}
+
+.lession_content::before {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 16px;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background: rgba(220,205,164,.55);
+  z-index: 2;
+}
+
+.lession_content:nth-of-type(2)::before { transform: translateX(-50%) rotate(3deg); }
+.lession_content:nth-of-type(3)::before { transform: translateX(-50%) rotate(-4deg); }
+
+.lession_content:nth-of-type(1) { transform: rotate(-1.1deg); }
+.lession_content:nth-of-type(2) { transform: rotate(.8deg); }
+.lession_content:nth-of-type(3) { transform: rotate(-.4deg); }
+
+.lession_content:hover {
+  transform: rotate(0deg) translateY(-3px);
+  transition: transform .18s ease;
+}
+
+.accordion {
+  position: relative;
+  transform: rotate(.3deg);
+}
+
+.accordion::before {
+  content: "memory rules";
+  position: absolute;
+  top: -26px;
+  right: 18px;
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: rgba(35,33,31,.58);
+  transform: rotate(3deg);
+}
+
+.accordion-item {
+  border-style: dashed;
+}
+
+.about_bio::after,
+.lession_bio::after,
+.form-container::after,
+.contact-card::after {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 18px;
+  background: rgba(220,205,164,.45);
+  top: -9px;
+  right: 34px;
+  transform: rotate(3deg);
+}
+
+.about_bio,
+.lession_bio,
+.form-container,
+.contact-card {
+  position: relative;
+}
+
+.about_bio { transform: rotate(.5deg); }
+.lession_bio { transform: rotate(-.6deg); }
+.form-container { transform: rotate(-.4deg); }
+.contact-card { transform: rotate(.7deg); }
+
+.read-more,
+.read-less {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  color: var(--ink);
+  border-bottom: 1px dashed currentColor;
+}
+
+.read-more:hover,
+.read-less:hover {
+  color: var(--ink);
+}
+
+.contact-card .contact-item strong,
+.tite strong {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.footer-doodle {
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 27px;
+  margin-bottom: 4px;
+  color: rgba(35,33,31,.75);
+  transform: rotate(-1deg);
+}
+
+@media (min-width: 1200px) {
+  .containerr,
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .margin-note {
+    position: static;
+    margin: 18px 0 0 auto;
+    width: 180px;
+  }
+
+  .margin-note::before {
+    display: none;
+  }
+}
+
+@media (max-width: 610px) {
+  .notebook-section::before {
+    position: static;
+    display: inline-block;
+    margin: 10px 0 10px 36px;
+  }
+
+  .section-scribble {
+    margin-left: 34px;
+    font-size: 23px;
+  }
+
+  .chess-doodle {
+    font-size: 25px;
+    letter-spacing: 5px;
+  }
+
+  .margin-note {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+}
