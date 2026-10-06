@@ -928,3 +928,156 @@ footer p.text-white {
     font-size: 20px;
   }
 }
+
+
+/* ======================== Notebook study spread ======================== */
+.study-spread {
+  padding: 28px 0 72px;
+}
+
+.study-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.study-page {
+  position: relative;
+  min-height: 520px;
+  padding: 34px;
+  background:
+    linear-gradient(to right, transparent 0, transparent 48px, rgba(184,73,73,.28) 48px, rgba(184,73,73,.28) 50px, transparent 50px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.74) 0, rgba(255,255,255,.74) 31px, rgba(68,114,165,.13) 31px, rgba(68,114,165,.13) 32px);
+  border: 1.5px solid var(--ink);
+  box-shadow: 10px 12px 0 rgba(35,33,31,.08), var(--paper-shadow);
+}
+
+.chess-study-card { transform: rotate(-1deg); }
+.notes-page { transform: rotate(.8deg); }
+
+.paper-label {
+  position: absolute;
+  top: -16px;
+  left: 28px;
+  padding: 6px 14px;
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  background: rgba(238,225,173,.88);
+  border: 1px solid rgba(35,33,31,.42);
+  transform: rotate(-2deg);
+}
+
+.mini-board {
+  width: min(420px, 92%);
+  aspect-ratio: 1;
+  margin: 34px auto 20px;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: repeat(8,1fr);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 7px 0 rgba(35,33,31,.15);
+  transform: rotate(.5deg);
+  background: #f3ecd9;
+}
+
+.mini-board span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 3vw, 34px);
+  color: var(--ink);
+}
+
+.mini-board span:nth-child(16n+2),
+.mini-board span:nth-child(16n+4),
+.mini-board span:nth-child(16n+6),
+.mini-board span:nth-child(16n+8),
+.mini-board span:nth-child(16n+9),
+.mini-board span:nth-child(16n+11),
+.mini-board span:nth-child(16n+13),
+.mini-board span:nth-child(16n+15) {
+  background: rgba(35,33,31,.18);
+}
+
+.board-note,
+.arrow-note,
+.hand-list,
+.notes-page h2,
+.sticky-note {
+  font-family: "Caveat", cursive;
+}
+
+.board-note {
+  font-size: 27px;
+  line-height: 1.05;
+  margin-left: 12%;
+  transform: rotate(-2deg);
+}
+
+.arrow-note {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  font-size: 24px;
+  transform: rotate(5deg);
+  color: rgba(35,33,31,.65);
+}
+
+.notes-page h2 {
+  margin-top: 38px;
+  font-size: clamp(44px, 5vw, 64px);
+  line-height: .95;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.notes-page > p {
+  margin-top: 28px;
+  max-width: 85%;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hand-list {
+  display: grid;
+  gap: 11px;
+  margin-top: 28px;
+  font-size: 27px;
+  color: var(--ink);
+}
+
+.sticky-note {
+  position: absolute;
+  right: -18px;
+  bottom: 26px;
+  width: 170px;
+  min-height: 118px;
+  padding: 22px 16px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #efe39a;
+  border: 1px solid rgba(35,33,31,.3);
+  box-shadow: 5px 7px 0 rgba(35,33,31,.12);
+  font-size: 26px;
+  line-height: 1;
+  transform: rotate(5deg);
+}
+
+@media (max-width: 800px) {
+  .study-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .study-page {
+    min-height: 460px;
+    transform: none;
+  }
+
+  .sticky-note {
+    right: 10px;
+  }
+}
