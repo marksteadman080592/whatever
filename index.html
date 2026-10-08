@@ -216,7 +216,17 @@
     <span>KOKO</span>
     <span>♔ ♕ ♖ ♗ ♘ ♙</span>
     <span>study • test • remember</span>
-    <span class="visitor-counter" style="display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap" title="Page loads counted since 8 October 2026; not unique visitors"><span>page visits since 08.10.26</span><img src="https://visitor-badge.laobi.icu/badge?page_id=kokochess.com.koko.website.20261008&amp;left_text=visits&amp;left_color=%234f4b42&amp;right_color=%238c7255&amp;radius=2&amp;height=20" alt="Running page-visit counter" width="110" height="20" loading="eager" referrerpolicy="no-referrer"></span>
+    <span class="visitor-counter" style="display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap" title="Approximate counter-image loads since 8 October 2026; includes repeat visits and may include automated requests. Not unique visitors."><span>page-load counter (approx.) · since 08.10.26</span><img id="koko-page-load-counter" data-counter-url="https://visitor-badge.laobi.icu/badge?page_id=kokochess.com.koko.website.20261008&amp;left_text=loads&amp;left_color=%234f4b42&amp;right_color=%238c7255&amp;radius=2&amp;height=20" alt="Approximate page-load counter, not unique visitors" width="110" height="20" loading="eager" referrerpolicy="no-referrer"></span>
   </footer>
+  <script>
+    // Request the counter once per page load, bypassing browser/CDN image caching.
+    // The badge counts requests, not unique human visitors.
+    (function () {
+      var counter = document.getElementById("koko-page-load-counter");
+      if (!counter) return;
+      var url = counter.getAttribute("data-counter-url").replace(/&amp;/g, "&");
+      counter.src = url + "&cb=" + encodeURIComponent(Date.now().toString(36) + "-" + Math.random().toString(36).slice(2));
+    })();
+  </script>
 </body>
 </html>
