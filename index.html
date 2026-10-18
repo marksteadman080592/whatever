@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .note-form :is(input, textarea, button):focus-visible {
+      outline: 2px dashed var(--ink);
+      outline-offset: 4px;
+    }
+    .note-form button:disabled { cursor: wait; opacity: .65; }
+    .form-status { min-height: 1.4em; font: 700 22px/1.4 "Caveat", cursive; }
+  </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMDLZY81ZY"></script>
   <script>
@@ -197,7 +205,7 @@
         <p>Write a message below. It arrives like a note slipped into the back of the book.</p>
       </div>
 
-      <form class="note-form" action="https://formspree.io/f/xqazpjnv" method="post">
+      <form id="contact-form" class="note-form" action="https://formspree.io/f/xqazpjnv" method="post">
         <div class="field-row">
           <label>Name<input type="text" name="name" required></label>
           <label>Email<input type="email" name="email" required></label>
@@ -205,6 +213,7 @@
         <label>Subject<input type="text" name="subject"></label>
         <label>Your note<textarea name="message" rows="6" required></textarea></label>
         <button class="ink-button" type="submit">send note →</button>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
       </form>
 
       <div class="contact-scribble">
@@ -220,6 +229,47 @@
     <span>study • test • remember</span>
 
   </footer>
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      if (!form || !window.fetch || !window.FormData || !window.AbortController) return;
+      var button = form.querySelector('button[type="submit"]');
+      var status = document.getElementById("contact-status");
+      var idleLabel = button.textContent;
+      var sending = false;
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        if (sending) return;
+        sending = true;
+        button.disabled = true;
+        button.setAttribute("aria-busy", "true");
+        button.textContent = "sending…";
+        status.textContent = "Sending your note…";
+        var controller = new AbortController();
+        var timeout = setTimeout(function () { controller.abort(); }, 30000);
+
+        try {
+          var response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { "Accept": "application/json" },
+            signal: controller.signal
+          });
+          if (!response.ok) throw new Error("Submission rejected");
+          status.textContent = "Thank you — your note was submitted successfully.";
+        } catch (error) {
+          status.textContent = "We couldn't confirm your note was sent. Your text is still here. Try again, or email kokoweb08@gmail.com.";
+        } finally {
+          clearTimeout(timeout);
+          sending = false;
+          button.disabled = false;
+          button.removeAttribute("aria-busy");
+          button.textContent = idleLabel;
+        }
+      });
+    })();
+  </script>
   <script>
     // Request the counter once per page load, bypassing browser/CDN image caching.
     // The badge counts requests, not unique human visitors.
